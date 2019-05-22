@@ -1,3 +1,5 @@
+//package smmry;
+
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -5,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class smmry{
+public class Smmry{
 	public static void main(String[] args){
 		File article = null;
 
@@ -54,14 +56,6 @@ public class smmry{
 			}
 		}
 
-		/*String summary = article[0];
-		for(int k = 0; k< article.length; k++){
-			int cutoff = 0;
-			if(sentPoints[k]>= cutoff){
-				System.out.println("Added sentence to summary");
-				summary += article[k];
-			}
-		}*/
 		String summary = concatSummary(article, sentPoints, cutoff);
 
 		while((double)summary.length()/(double)articleLength > .4){
@@ -113,7 +107,8 @@ public class smmry{
 			String oddArticle = readFileIntoString(article);
 			// oddString == String with potentially odd characters (Control)
 			String cleanArticle = oddArticle.replaceAll("[^\\x00-\\x7F]", " "); 
-			// nonStrange == String after odd characters taken out.
+			// cleanArticle == String after odd characters taken out.
+			
 			//System.out.println(cleanArticle);
 
 			/*
